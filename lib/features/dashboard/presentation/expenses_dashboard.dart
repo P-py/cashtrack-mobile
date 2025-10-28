@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:cashtrack/core/app_config.dart';
+import 'package:cashtrack/core/utils/type_labels.dart';
 import 'package:cashtrack/features/auth/data/auth_service.dart';
 import 'package:cashtrack/features/auth/presentation/login_screen.dart';
 import 'package:cashtrack/features/dashboard/data/expense_service.dart';
@@ -434,6 +435,7 @@ class _DashboardCard extends StatelessWidget {
                 final label = item["expenseLabel"] ?? "-";
                 final value = (item["value"] ?? 0).toStringAsFixed(2);
                 final type = item["type"] ?? "-";
+                final typeLabel = TypeLabels.labelType(type); // rótulo para UI (ex.: Salário)
                 DateTime? createdAt;
                 String createdAtText = '-';
                 try {
@@ -493,7 +495,7 @@ class _DashboardCard extends StatelessWidget {
                               const SizedBox(width: 6),
                               Flexible(
                                 child: Text(
-                                  'Criado em: $createdAtText',
+                                  createdAtText,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     color: Colors.white70,
@@ -517,7 +519,7 @@ class _DashboardCard extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 child: Text(
-                                  type,
+                                  typeLabel,
                                   style: const TextStyle(
                                     fontSize: 11,
                                     color: Colors.white,

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:cashtrack/components/main_navigation.dart';
+import 'package:cashtrack/core/utils/type_labels.dart';
 import 'package:cashtrack/features/auth/data/auth_service.dart';
 import 'package:cashtrack/features/auth/presentation/login_screen.dart';
 import 'package:cashtrack/features/dashboard/data/expense_service.dart';
@@ -1012,6 +1013,7 @@ class _DashboardCard extends StatelessWidget {
                         item["incomeLabel"] ?? item["expenseLabel"] ?? "-";
                     final value = (item["value"] ?? 0).toStringAsFixed(2);
                     final type = item["type"] ?? "-";
+                    final typeLabel = TypeLabels.labelType(type); // rótulo para UI (ex.: Salário)
 
                     return Container(
                       margin: const EdgeInsets.only(bottom: 12),
@@ -1070,7 +1072,7 @@ class _DashboardCard extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 child: Text(
-                                  type,
+                                  typeLabel,
                                   style: const TextStyle(
                                     fontSize: 11,
                                     color: Colors.white,
