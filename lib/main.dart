@@ -1,5 +1,5 @@
-import 'package:cashtrack_mobile/app.dart';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
+import 'package:cashtrack/app.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,11 +1,13 @@
 import 'dart:convert';
-import 'package:cashtrack_mobile/core/app_config.dart';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
-import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
-import 'package:cashtrack_mobile/features/dashboard/data/expense_service.dart';
-import 'package:cashtrack_mobile/features/dashboard/presentation/transactions_chart.dart';
+import 'package:cashtrack/core/app_config.dart';
+import 'package:cashtrack/core/utils/type_labels.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
+import 'package:cashtrack/features/auth/presentation/login_screen.dart';
+import 'package:cashtrack/features/dashboard/data/expense_service.dart';
+import 'package:cashtrack/features/dashboard/presentation/transactions_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class ExpensesDashboardScreen extends StatefulWidget {
@@ -433,6 +435,18 @@ class _DashboardCard extends StatelessWidget {
                 final label = item["expenseLabel"] ?? "-";
                 final value = (item["value"] ?? 0).toStringAsFixed(2);
                 final type = item["type"] ?? "-";
+                final typeLabel = TypeLabels.labelType(type); // rótulo para UI (ex.: Salário)
+                DateTime? createdAt;
+                String createdAtText = '-';
+                try {
+                  final raw = item["dateCreated"] as String?;
+                  if (raw != null && raw.isNotEmpty) {
+                    createdAt = DateTime.parse(raw);
+                    createdAtText = DateFormat('dd/MM/yyyy').format(createdAt.toLocal());
+                  }
+                } catch (_) {
+                  // mantém '-' caso parsing falhe
+                }
                 return Container(
                   margin: const EdgeInsets.only(bottom: 12),
                   padding:
@@ -474,6 +488,23 @@ class _DashboardCard extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 6),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Icon(Icons.schedule, size: 14, color: Colors.white60),
+                              const SizedBox(width: 6),
+                              Flexible(
+                                child: Text(
+                                  createdAtText,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                           // Tipo e botões
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -488,7 +519,7 @@ class _DashboardCard extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(6),
                                 ),
                                 child: Text(
-                                  type,
+                                  typeLabel,
                                   style: const TextStyle(
                                     fontSize: 11,
                                     color: Colors.white,

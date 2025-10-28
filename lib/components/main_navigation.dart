@@ -1,7 +1,7 @@
-import 'package:cashtrack_mobile/features/account/presentation/account_screen.dart';
-import 'package:cashtrack_mobile/features/dashboard/presentation/dashboard_screen.dart';
-import 'package:cashtrack_mobile/features/dashboard/presentation/expenses_dashboard.dart';
-import 'package:cashtrack_mobile/features/dashboard/presentation/incomes_dashboard.dart';
+import 'package:cashtrack/features/account/presentation/account_screen.dart';
+import 'package:cashtrack/features/dashboard/presentation/dashboard_screen.dart';
+import 'package:cashtrack/features/dashboard/presentation/expenses_dashboard.dart';
+import 'package:cashtrack/features/dashboard/presentation/incomes_dashboard.dart';
 import 'package:flutter/material.dart';
 
 class MainNavigation extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
-import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
+import 'package:cashtrack/features/auth/presentation/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';

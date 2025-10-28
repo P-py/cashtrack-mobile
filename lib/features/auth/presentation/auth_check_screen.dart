@@ -1,6 +1,6 @@
-import 'package:cashtrack_mobile/components/main_navigation.dart';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
-import 'package:cashtrack_mobile/features/home_screen.dart';
+import 'package:cashtrack/components/main_navigation.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
+import 'package:cashtrack/features/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

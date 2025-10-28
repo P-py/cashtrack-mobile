@@ -65,7 +65,7 @@ class _TransactionsChartState extends State<TransactionsChart> {
       decoration: BoxDecoration(
         color: darkSecondaryBg,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: widget.accentColor.withOpacity(0.3)),
+        border: Border.all(color: widget.accentColor.withValues(alpha: .3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +88,7 @@ class _TransactionsChartState extends State<TransactionsChart> {
                 decoration: BoxDecoration(
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: widget.accentColor.withOpacity(0.4)),
+                  border: Border.all(color: widget.accentColor.withValues(alpha: .4)),
                 ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
@@ -120,6 +120,12 @@ class _TransactionsChartState extends State<TransactionsChart> {
                 gridData: FlGridData(show: false),
                 borderData: FlBorderData(show: false),
                 titlesData: FlTitlesData(
+                  rightTitles: AxisTitles(
+                    sideTitles: SideTitles(showTitles: false),
+                  ),
+                  topTitles: AxisTitles(
+                    sideTitles: SideTitles(showTitles: false),
+                  ),
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
