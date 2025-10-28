@@ -1,0 +1,46 @@
+workflows:
+  flutter_app_build:
+    name: Flutter App Build
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      vars:
+        GRADLE_OPTS: "-Xmx4096m -Dorg.gradle.jvmargs='-Xmx4096m'"
+
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+        - ~/.gradle/caches
+        - build
+
+    scripts:
+      - name: 🔧 Preparar dependências
+        script: |
+          flutter clean
+          flutter pub get
+
+      - name: 🧩 Configurar Gradle e otimizações
+        script: |
+          cd android
+          echo "org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g -XX:+HeapDumpOnOutOfMemoryError" >> gradle.properties
+          echo "org.gradle.parallel=true" >> gradle.properties
+          echo "org.gradle.configureondemand=true" >> gradle.properties
+          cd ..
+
+      - name: 🧱 Build APK (Android)
+        script: |
+          flutter build apk --release
+
+      - name: 🍏 Build iOS (opcional)
+        script: |
+          flutter build ios --release --no-codesign
+
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/ios/iphoneos/*.ipa
+
+    publishing:
+      email:
+        recipients:
+          - pedrosalviano170@gmail.com
