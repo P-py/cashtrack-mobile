@@ -218,7 +218,8 @@ Entre em contato com os desenvolvedores do projeto Cashtrack:
 - **Pedro Salviano Santos** – 236586@facens.br  
 - **Luiz Gustavo Motta Viana** – 236428@facens.br  
 - **Ronaldo Simeone Antonio** – 190232@facens.br  
-- **Erick Ferreira Ribeiro** – 237046@facens.br  
+- **Erick Ferreira Ribeiro** – 237046@facens.br
+- **Leonardo Vergilio Luz** - 234674@facens.br
 
 Projeto desenvolvido como parte da disciplina de **Desenvolvimento Mobile**
 
