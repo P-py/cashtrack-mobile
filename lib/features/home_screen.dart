@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
-import 'package:cashtrack_mobile/features/auth/presentation/signup_screen.dart';
+import 'package:cashtrack/features/auth/presentation/login_screen.dart';
+import 'package:cashtrack/features/auth/presentation/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

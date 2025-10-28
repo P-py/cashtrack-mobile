@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:cashtrack_mobile/core/app_config.dart';
-import 'package:cashtrack_mobile/core/theme/app_theme.dart';
-import 'package:cashtrack_mobile/core/utils/api_service.dart';
-import 'package:cashtrack_mobile/core/utils/logger.dart';
-import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
+import 'package:cashtrack/core/app_config.dart';
+import 'package:cashtrack/core/theme/app_theme.dart';
+import 'package:cashtrack/core/utils/api_service.dart';
+import 'package:cashtrack/core/utils/logger.dart';
+import 'package:cashtrack/features/auth/presentation/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';

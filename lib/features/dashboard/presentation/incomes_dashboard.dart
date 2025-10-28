@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
-import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
-import 'package:cashtrack_mobile/features/dashboard/data/income_service.dart';
-import 'package:cashtrack_mobile/features/dashboard/presentation/transactions_chart.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
+import 'package:cashtrack/features/auth/presentation/login_screen.dart';
+import 'package:cashtrack/features/dashboard/data/income_service.dart';
+import 'package:cashtrack/features/dashboard/presentation/transactions_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';

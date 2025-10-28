@@ -1,4 +1,4 @@
-package com.example.cashtrack_mobile
+package com.example.cashtrack
 
 import io.flutter.embedding.android.FlutterActivity
 

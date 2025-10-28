@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
-import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
-import 'package:cashtrack_mobile/features/home_screen.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
+import 'package:cashtrack/features/auth/presentation/login_screen.dart';
+import 'package:cashtrack/features/home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});

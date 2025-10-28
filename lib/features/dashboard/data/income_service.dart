@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:cashtrack_mobile/core/app_config.dart';
-import 'package:cashtrack_mobile/core/utils/api_service.dart';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
+import 'package:cashtrack/core/app_config.dart';
+import 'package:cashtrack/core/utils/api_service.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
 
 class IncomeService {
   final ApiService _api;

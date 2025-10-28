@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
+import 'package:cashtrack/features/auth/data/auth_service.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
