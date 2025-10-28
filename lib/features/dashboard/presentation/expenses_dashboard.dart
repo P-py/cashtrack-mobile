@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:cashtrack_mobile/core/app_config.dart';
 import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
 import 'package:cashtrack_mobile/features/auth/presentation/login_screen.dart';
 import 'package:cashtrack_mobile/features/dashboard/data/expense_service.dart';
@@ -18,7 +19,7 @@ class _ExpensesDashboardScreenState extends State<ExpensesDashboardScreen> {
   List<dynamic> expenses = [];
   bool loading = true;
   bool error = false;
-  final String baseUrl = 'https://cash-track-api-production.up.railway.app';
+  final String baseUrl = AppConfig.baseUrl;
 
   @override
   void initState() {
@@ -405,7 +406,7 @@ class _DashboardCard extends StatelessWidget {
             label: const Text("Adicionar Novo",
                 style: TextStyle(color: Colors.white)),
             style: ElevatedButton.styleFrom(
-              backgroundColor: highlightColor.withOpacity(0.9),
+              backgroundColor: highlightColor.withValues(alpha: .9),
               padding: const EdgeInsets.symmetric(vertical: 12),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8)),
