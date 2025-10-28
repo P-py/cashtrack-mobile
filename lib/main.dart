@@ -1,30 +1,20 @@
-import 'package:cashtrack_mobile/screens/auth_check_screen.dart';
-import 'package:cashtrack_mobile/services/auth_service.dart';
+import 'package:cashtrack_mobile/app.dart';
+import 'package:cashtrack_mobile/features/auth/data/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inicializa AuthService antes de rodar o app
+  final authService = await AuthService.init();
+
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthService()),
+        ChangeNotifierProvider(create: (_) => authService),
       ],
-      child: const MyApp(),
+      child: const CashtrackApp(),
     ),
   );
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Cashtrack',
-      theme: ThemeData(fontFamily: 'Poppins'),
-      home: const AuthCheckScreen(),
-    );
-  }
-}
-
